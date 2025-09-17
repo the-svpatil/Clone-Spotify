@@ -129,17 +129,3 @@ document.getElementById('previous').addEventListener('click', ()=>{
   //      durationSpan.textContent = formatTime(audio.duration);
     //  });
    // });
-
-
-//let progress = 0;
-   // let bar = document.getElementById("myProgressbar");
-
-   // let interval = setInterval(() => {
-     // if (progress >= 100) {
-    //    clearInterval(interval);
-    //  } else {
-     //   progress++;
-     //   bar.style.width = progress + "%";
-      //  bar.textContent = progress + "%";
-     // }
-   // }, 100); 
