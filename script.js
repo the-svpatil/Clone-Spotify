@@ -114,3 +114,32 @@ document.getElementById('previous').addEventListener('click', ()=>{
         masterPlay.click(); 
     }
 });
+
+
+//function formatTime(seconds) {
+ //     const min = Math.floor(seconds / 60);
+ //     const sec = Math.floor(seconds % 60);
+   //   return `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+  //  }
+///document.querySelectorAll('.timestamp').forEach(songDiv => {
+   //   const audio = new Audio(songDiv.dataset.src);
+  //    const durationSpan = songDiv.querySelector('.duration');
+
+//audio.addEventListener('loadedmetadata', () => {
+  //      durationSpan.textContent = formatTime(audio.duration);
+    //  });
+   // });
+
+
+//let progress = 0;
+   // let bar = document.getElementById("myProgressbar");
+
+   // let interval = setInterval(() => {
+     // if (progress >= 100) {
+    //    clearInterval(interval);
+    //  } else {
+     //   progress++;
+     //   bar.style.width = progress + "%";
+      //  bar.textContent = progress + "%";
+     // }
+   // }, 100); 
