@@ -129,3 +129,4 @@ document.getElementById('previous').addEventListener('click', ()=>{
   //      durationSpan.textContent = formatTime(audio.duration);
     //  });
    // });
+
