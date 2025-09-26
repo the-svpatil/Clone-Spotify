@@ -116,17 +116,20 @@ document.getElementById('previous').addEventListener('click', ()=>{
 });
 
 
-//function formatTime(seconds) {
- //     const min = Math.floor(seconds / 60);
- //     const sec = Math.floor(seconds % 60);
-   //   return `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
-  //  }
-///document.querySelectorAll('.timestamp').forEach(songDiv => {
-   //   const audio = new Audio(songDiv.dataset.src);
-  //    const durationSpan = songDiv.querySelector('.duration');
+function formatTime(seconds) {
+    //debugger
+    const min = Math.floor(seconds / 60);
+    const sec = Math.floor(seconds % 60);
+    return `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+}
 
-//audio.addEventListener('loadedmetadata', () => {
-  //      durationSpan.textContent = formatTime(audio.duration);
-    //  });
-   // });
+songs.forEach((song, i) => {
+    //debugger
+    const audio = new Audio(song.filePath); // load each song
+    audio.addEventListener('loadedmetadata', () => {
+        let duration = formatTime(audio.duration); 
+        // Now put it inside the UI, assuming you have an element with class 'timestamp'
+        document.getElementsByClassName('timestamp')[i].textContent = duration;
+    });
+});
 
