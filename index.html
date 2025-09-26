@@ -60,7 +60,7 @@
          <div class="songbanner"></div>
     </div> 
     <div class="bottom">
-        <input type="range" name="range" id="myProgressbar" min="0" max="100">
+        <input type="range" id="myProgressbar" value="0" min="0" max="100">
         <div class="icons">
             <!--- Fontawesome Icon-->
             <i class="fa-3x fa-solid fa-backward" id="previous"></i>
@@ -68,7 +68,10 @@
             <i class="fa-3x fa-solid fa-forward" id="next"></i>
         </div>
         <div class="songInfo">
+            <span id="currentTime">00:00</span>
             <img src="playing.gif" width="42px" alt="" id="gif"><span id="masterSongName">let me love you</span>
+            <!---span id="totalTime">00:00</span--->
+            </div>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/2379633d76.js" crossorigin="anonymous"></script>

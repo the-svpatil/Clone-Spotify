@@ -133,3 +133,18 @@ songs.forEach((song, i) => {
     });
 });
 
+
+/////////
+audioElement.addEventListener('loadedmetadata', () => {
+    document.getElementById('totalTime').textContent = formatTime(audioElement.duration);
+});
+
+audioElement.addEventListener('timeupdate', () => {
+    // Update Seekbar
+    let progress = parseInt((audioElement.currentTime / audioElement.duration) * 100);
+    myProgressbar.value = progress;
+
+    // Update current time display
+    document.getElementById('currentTime').textContent = formatTime(audioElement.currentTime);
+});
+
