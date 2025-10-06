@@ -129,6 +129,7 @@ songs.forEach((song, i) => {
     audio.addEventListener('loadedmetadata', () => {
         let duration = formatTime(audio.duration); 
         // Now put it inside the UI, assuming you have an element with class 'timestamp'
+        //var playIcon = `<i id="${i}" class="songItemPlay fa-solid fa-play"></i> `
         document.getElementsByClassName('timestamp')[i].textContent = duration;
     });
 });
@@ -147,4 +148,3 @@ audioElement.addEventListener('timeupdate', () => {
     // Update current time display
     document.getElementById('currentTime').textContent = formatTime(audioElement.currentTime);
 });
-
