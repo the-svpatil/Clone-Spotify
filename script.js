@@ -211,3 +211,43 @@ masterPlay.addEventListener('click', () => toggleSong(songIndex));
 //         gif.style.opacity = 0;
 //     }
 // })
+
+const songUpload = document.getElementById("songUpload");
+const songContainer = document.querySelector(".songItemContainer");
+let uploadedSongs = [];
+
+songUpload.addEventListener("change", (event) => {
+    const files = Array.from(event.target.files);
+
+    files.forEach((file, index) => {
+        const audioURL = URL.createObjectURL(file);
+
+        // Create a new song item dynamically
+        const newSongItem = document.createElement("div");
+        newSongItem.classList.add("songItem");
+        newSongItem.innerHTML = `
+            <img src="musicicon.png" alt="${file.name}">
+            <span class="songName">${file.name.replace(/\.[^/.]+$/, "")}</span>
+            <span class="songlistplay">
+                <i class="fa-solid fa-play songItemPlay"></i>
+                <span class="timestamp"></span>
+            </span>
+        `;
+
+        // Add to container
+        songContainer.appendChild(newSongItem);
+
+        // Store in array for playback later
+        uploadedSongs.push({
+            name: file.name,
+            path: audioURL
+        });
+
+        // Optional: Add click listener to play the uploaded song
+        newSongItem.querySelector(".songItemPlay").addEventListener("click", () => {
+            let audio = new Audio(audioURL);
+            audio.play();
+            document.getElementById("masterSongName").textContent = file.name.replace(/\.[^/.]+$/, "");
+        });
+    });
+});
